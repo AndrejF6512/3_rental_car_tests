@@ -54,19 +54,19 @@ class UserServiceTest {
         void itShouldSaveUser() {
                 UserInDto userInDto = UserInDto.builder()
                         .firstName("Sebastian")
-                        .lastName("Alvarez")
+                        .lastName("Hlavny")
                         .username("sebix")
-                        .password("Marbella465")
+                        .password("123465")
                         .email("apple@gamil.com")
-                        .phone(968956584)
+                        .phone(0907111222)
                         .build();
 
                 User user = User.builder()
                         .firstName("Sebastian")
-                        .lastName("Alvarez")
+                        .lastName("Hlavny")
                         .username("sebix")
                         .email("apple@gamil.com")
-                        .phone(968956584)
+                        .phone(0907111222)
                         .roles(new ArrayList<>())
                         .build();
 
@@ -86,7 +86,7 @@ class UserServiceTest {
                 Long id = 2L;
 
                 UserInDto userInDto = UserInDto.builder()
-                        .username("Amigo")
+                        .username("Peter")
                         .build();
 
                 User user = User.builder()
@@ -134,8 +134,8 @@ class UserServiceTest {
         @Test
         void itShouldAddRoleToUser() {
                 User user = User.builder()
-                        .firstName("Pawel")
-                        .lastName("Mroczek")
+                        .firstName("Pavol")
+                        .lastName("Mohol")
                         .username("pablo")
                         .roles(new ArrayList<>())
                         .build();
@@ -160,7 +160,7 @@ class UserServiceTest {
         void itShouldDeleteUserRole() {
                 User user = User.builder()
                         .firstName("Kamil")
-                        .lastName("Jasny")
+                        .lastName("Krasny")
                         .username("Kamilek")
                         .roles(new ArrayList<>())
                         .build();
@@ -186,8 +186,8 @@ class UserServiceTest {
         @Test
         void itShouldAddCreditCardToUser() {
                 User user = User.builder()
-                        .firstName("Paul")
-                        .lastName("Potato")
+                        .firstName("Igor")
+                        .lastName("Hniezdo")
                         .username("niceUser45")
                         .build();
 
@@ -201,12 +201,12 @@ class UserServiceTest {
                         .build();
 
 
-                when(userRepository.findByUsername("niceUser45")).thenReturn(Optional.of(user));
+                when(userRepository.findByUsername("niceUser123")).thenReturn(Optional.of(user));
                 when(creditCardRepository.save(creditCard)).thenReturn(creditCard);
                 when(userRepository.save(user)).thenReturn(user);
 
 
-                userService.addCreditCardToUser("niceUser45", creditCardDto);
+                userService.addCreditCardToUser("niceUser123", creditCardDto);
                 assertThat(user.getCreditCard().getCardNumber()).isEqualTo(creditCardDto.getCardNumber());
         }
 
@@ -228,12 +228,12 @@ class UserServiceTest {
                         .build();
 
 
-                when(userRepository.findByUsername("Shell89")).thenReturn(Optional.of(user));
+                when(userRepository.findByUsername("Shell123")).thenReturn(Optional.of(user));
                 when(creditCardRepository.save(creditCard)).thenReturn(creditCard);
 
 
-                userService.addCreditCardToUser("Shell89", creditCardDto);
-                userService.deleteUserCreditCard("Shell89");
+                userService.addCreditCardToUser("Shell123", creditCardDto);
+                userService.deleteUserCreditCard("Shell123");
                 verify(creditCardRepository, times(1)).delete(user.getCreditCard());
 
         }
@@ -241,15 +241,15 @@ class UserServiceTest {
         @Test
         void itShouldThrowExistingUserException() {
                 UserInDto userInDto = UserInDto.builder()
-                        .username("Flick")
+                        .username("Filip")
                         .build();
 
                 User user = User.builder()
-                        .username("Flick")
+                        .username("Filip")
                         .build();
 
 
-                when(userRepository.findByUsername("Flick")).thenReturn(Optional.of(user));
+                when(userRepository.findByUsername("Filip")).thenReturn(Optional.of(user));
 
 
                 assertThrows(ExistingEntityException.class, () -> userService.saveUser(userInDto));
@@ -279,45 +279,45 @@ class UserServiceTest {
                         .build();
 
                 User user = User.builder()
-                        .username("Zbyszek")
+                        .username("Zdenko")
                         .roles(Arrays.asList(role))
                         .build();
 
 
-                when(userRepository.findByUsername("Zbyszek")).thenReturn(Optional.of(user));
+                when(userRepository.findByUsername("Zdenko")).thenReturn(Optional.of(user));
                 when(roleRepository.findByName("ROLE_USER")).thenReturn(Optional.of(role));
 
 
-                assertThrows(AssignedRoleException.class, () -> userService.addRoleToUser("Zbyszek", "ROLE_USER"));
+                assertThrows(AssignedRoleException.class, () -> userService.addRoleToUser("Zdenko", "ROLE_USER"));
         }
 
         @Test
         void itShouldReturnAllUsers() {
                 User user1 = User.builder()
                         .firstName("Adrian")
-                        .lastName("Puchacki")
-                        .username("puchatek")
-                        .password("jabsgsdgsf4")
-                        .email("Legaidf7@gmail.com")
-                        .phone(675842233)
+                        .lastName("Dolny")
+                        .username("adri")
+                        .password("fsfuhsfdgsf4")
+                        .email("Adri7@gmail.com")
+                        .phone(0948456235)
                         .build();
 
                 User user2 = User.builder()
-                        .firstName("Krzysztof")
-                        .lastName("Bluza")
-                        .username("hdjdhus")
-                        .password("nfhusg8dsh4")
-                        .email("Ohyufugd@gmail.com")
+                        .firstName("Kamil")
+                        .lastName("Bledy")
+                        .username("kam123")
+                        .password("g8dsh4")
+                        .email("Bledy@gmail.com")
                         .phone(945769043)
                         .build();
 
                 User user3 = User.builder()
-                        .firstName("Grzegorz")
-                        .lastName("Kante")
-                        .username("skokl")
+                        .firstName("Gregor")
+                        .lastName("Vysoky")
+                        .username("gregl")
                         .password("gtdft47HHs8hu")
-                        .email("Oktesasd7@gmail.com")
-                        .phone(234665789)
+                        .email("Vysoky@gmail.com")
+                        .phone(0908126585)
                         .build();
 
                 List<User> users = new ArrayList<>();
