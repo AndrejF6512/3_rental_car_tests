@@ -135,7 +135,7 @@ class OrderServiceTest {
                         .build();
 
                 User user = User.builder()
-                        .username("Radoslaw")
+                        .username("Radoslav")
                         .creditCard(card)
                         .build();
 
@@ -150,7 +150,7 @@ class OrderServiceTest {
         @Test
         void itShouldThrowNoCreditCardException() {
                 User user = User.builder()
-                        .username("Tomasz")
+                        .username("Tomas")
                         .creditCard(null)
                         .build();
 
@@ -168,7 +168,7 @@ class OrderServiceTest {
                         .build();
 
                 User user = User.builder()
-                        .username("Radoslaw")
+                        .username("Radoslav")
                         .creditCard(card)
                         .build();
 
