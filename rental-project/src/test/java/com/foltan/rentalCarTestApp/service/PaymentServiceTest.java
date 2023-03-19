@@ -36,7 +36,7 @@ class PaymentServiceTest {
         void itShouldAddCreditCardToUser() {
                 User user = User.builder()
                         .firstName("Mickey")
-                        .lastName("Rourke")
+                        .lastName("Mouse")
                         .build();
 
                 CreditCardDto creditCardDto = CreditCardDto.builder()
@@ -67,7 +67,7 @@ class PaymentServiceTest {
 
                 User user = User.builder()
                         .firstName("Richard")
-                        .lastName("Hammond")
+                        .lastName("Maly")
                         .creditCard(creditCard)
                         .build();
 
@@ -84,7 +84,7 @@ class PaymentServiceTest {
         @Test
         void itShouldThrowNoCreditCardException() {
                 User user = User.builder()
-                        .username("MeekMill765")
+                        .username("Michal765")
                         .creditCard(null)
                         .build();
 
