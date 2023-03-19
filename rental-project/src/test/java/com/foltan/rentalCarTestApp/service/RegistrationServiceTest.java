@@ -28,11 +28,11 @@ class RegistrationServiceTest {
         @Test
         void itShouldThrowExistingEntityException() {
                 UserInDto userInDto = UserInDto.builder()
-                        .username("GreenJohn78")
+                        .username("MalyPavol123")
                         .build();
 
                 User user = User.builder()
-                        .username("GreenJohn78")
+                        .username("MalyPavol123")
                         .build();
 
 
@@ -45,8 +45,8 @@ class RegistrationServiceTest {
         @Test
         void itShouldThrowWeakPasswordException() {
                 UserInDto userInDto = UserInDto.builder()
-                        .username("JohnBDP685")
-                        .password("johnapple56")
+                        .username("JanABC685")
+                        .password("jancde56")
                         .build();
 
 
