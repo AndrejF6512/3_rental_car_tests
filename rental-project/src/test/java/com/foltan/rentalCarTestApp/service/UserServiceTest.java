@@ -214,8 +214,8 @@ class UserServiceTest {
         void itShouldDeleteUserCreditCard() {
                 User user = User.builder()
                         .firstName("John")
-                        .lastName("Octavian")
-                        .username("Shell89")
+                        .lastName("Orsula")
+                        .username("john89")
                         .build();
 
                 CreditCardDto creditCardDto = CreditCardDto.builder()
