@@ -24,4 +24,4 @@ spring:
 
 jwt:
   expirationTime: 3600000
-  secretKey: apple-banana-orange-grapefruit22
+  secretKey: blue-red-orange123
