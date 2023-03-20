@@ -48,7 +48,7 @@ class DeliveryServiceTest {
         @Test
         void itShouldRentACar() {
                 CarPackage sporty = CarPackage.builder()
-                        .packageName("Sporty")
+                        .packageName("Sport")
                         .pricePerHour(300)
                         .build();
 
@@ -61,13 +61,13 @@ class DeliveryServiceTest {
                         .build();
 
                 AccessKey accessKey = AccessKey.builder()
-                        .carPackage("Sporty")
+                        .carPackage("Sport")
                         .hours(2)
                         .build();
 
                 User user = User.builder()
                         .id(1L)
-                        .username("BlackJohn32")
+                        .username("Peter32")
                         .accessKey(accessKey)
                         .build();
 
@@ -112,7 +112,7 @@ class DeliveryServiceTest {
         @Test
         void itShouldThrowInvalidPackageException() {
                 CarPackage carPackage = CarPackage.builder()
-                        .packageName("Sporty")
+                        .packageName("Sport")
                         .pricePerHour(300)
                         .build();
 
@@ -129,7 +129,7 @@ class DeliveryServiceTest {
                         .build();
 
                 User user = User.builder()
-                        .username("JohnMcChicken")
+                        .username("JanKnazko")
                         .accessKey(accessKey)
                         .build();
 
