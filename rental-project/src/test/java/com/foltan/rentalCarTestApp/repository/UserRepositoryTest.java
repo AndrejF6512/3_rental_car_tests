@@ -21,10 +21,10 @@ class UserRepositoryTest {
 
         @BeforeEach
         void setUp() {
-                User user = new User(null, "Andrej", "Foltán", "Foltan123", "foltan", "foltana@gmail.com", 888777621, null, null, new ArrayList<>());
-                User user2 = new User(null, "Peter", "Pevný", "Pevny456", "pevny", "pevnyp@gmail.com", 465999222, null, null, new ArrayList<>());
-                User user3 = new User(null, "Karol", "Malý", "Maly567", "maly", "malyk@gmail.com", 765555444, null, null, new ArrayList<>());
-                User user4 = new User(null, "Petra", "Veselá", "Petra963", "vesela", "veselap@gmail.com", 908764220, null, null, new ArrayList<>());
+                User user = new User(null, "Andrej", "Foltán", "Foltan123", "45foltan85", "foltana@gmail.com", 0907112653, null, null, new ArrayList<>());
+                User user2 = new User(null, "Peter", "Pevný", "Pevny456", "51pevny64", "pevnyp@gmail.com", 0908869673, null, null, new ArrayList<>());
+                User user3 = new User(null, "Karol", "Malý", "Maly567", "69maly75", "malyk@gmail.com", 0918896542, null, null, new ArrayList<>());
+                User user4 = new User(null, "Petra", "Veselá", "Petra963", "76vesela63", "veselap@gmail.com", 0908764220, null, null, new ArrayList<>());
                 userRepository.save(user);
                 userRepository.save(user2);
                 userRepository.save(user3);
